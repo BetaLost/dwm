@@ -1,0 +1,3 @@
+# dwm
+Patches:
+* Vanity gaps
