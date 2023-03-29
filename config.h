@@ -2,8 +2,8 @@
 #include "/home/chief/.cache/wal/colors-wal-dwm.h"
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -11,7 +11,7 @@ static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=14" };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=14";
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -31,9 +31,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
@@ -59,6 +59,8 @@ static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
 
 static const char *light_up[] = {"light", "-A", "1", NULL};
 static const char *light_down[] = {"light", "-U", "1", NULL};
+
+static const char *screenshot[] = {"flameshot gui", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,6 +96,7 @@ static const Key keys[] = {
 	{ 0,                     XF86XK_AudioMute, spawn,          {.v = mutevol } },
 	{ 0,               XF86XK_MonBrightnessUp, spawn,          {.v = light_up} },
 	{ 0,             XF86XK_MonBrightnessDown, spawn,          {.v = light_down} },
+	{ 0,                             XK_Print, spawn,          {.v = screenshot} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
