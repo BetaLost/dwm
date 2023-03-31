@@ -7,8 +7,8 @@ static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=14" };
-static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=14";
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
+static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=12";
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "" };
@@ -53,12 +53,21 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 
+/*
 static const char *upvol[]   = { "pulsemixer", "--change-volume", "+1", NULL };
 static const char *downvol[]   = { "pulsemixer", "--change-volume", "-1", NULL };
 static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
 
 static const char *light_up[] = {"light", "-A", "1", NULL};
 static const char *light_down[] = {"light", "-U", "1", NULL};
+*/
+
+static const char *upvol[]   = { "/home/chief/volume_brightness.sh", "--upvol", NULL };
+static const char *downvol[]   = {"/home/chief/volume_brightness.sh", "--downvol", NULL };
+static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
+
+static const char *light_up[] = { "/home/chief/volume_brightness.sh", "--uplight", NULL};
+static const char *light_down[] = { "/home/chief/volume_brightness.sh", "--downlight", NULL};
 
 static const char *screenshot[] = {"flameshot gui", NULL};
 
@@ -91,7 +100,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+	{ 0,              XF86XK_AudioRaiseVolume, spawn,          SHCMD("pulsemixer --change-volume +1 && pkill -f dwmbar.sh && /home/chief/dwmbar.sh &") },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                     XF86XK_AudioMute, spawn,          {.v = mutevol } },
 	{ 0,               XF86XK_MonBrightnessUp, spawn,          {.v = light_up} },
