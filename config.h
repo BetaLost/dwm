@@ -60,15 +60,6 @@ static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
 static const char *light_up[] = {"light", "-A", "1", NULL};
 static const char *light_down[] = {"light", "-U", "1", NULL};
 
-/*
-static const char *upvol[]   = { "/home/chief/volume_brightness.sh", "--upvol", NULL };
-static const char *downvol[]   = {"/home/chief/volume_brightness.sh", "--downvol", NULL };
-static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
-
-static const char *light_up[] = { "/home/chief/volume_brightness.sh", "--uplight", NULL};
-static const char *light_down[] = { "/home/chief/volume_brightness.sh", "--downlight", NULL};
-*/
-
 static const char *screenshot[] = {"flameshot gui", NULL};
 
 static const Key keys[] = {
