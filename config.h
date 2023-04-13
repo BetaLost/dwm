@@ -60,7 +60,7 @@ static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
 static const char *light_up[] = {"light", "-A", "1", NULL};
 static const char *light_down[] = {"light", "-U", "1", NULL};
 
-static const char *screenshot[] = {"flameshot gui", NULL};
+static const char *screenshot[] = {"flameshot", "gui", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
