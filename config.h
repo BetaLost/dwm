@@ -44,21 +44,18 @@ static const Layout layouts[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 
-static const char *upvol[]   = { "pulsemixer", "--change-volume", "+1", NULL };
-static const char *downvol[]   = { "pulsemixer", "--change-volume", "-1", NULL };
-static const char *mutevol[] = { "pulsemixer", "--toggle-mute", NULL };
+static const char *upvol[]   = { "/home/chief/volbright.sh", "--upvol", NULL };
+static const char *downvol[]   = { "/home/chief/volbright.sh", "--downvol", NULL };
+static const char *mutevol[]   = { "/home/chief/volbright.sh", "--mutevol", NULL };
 
-static const char *light_up[] = {"light", "-A", "1", NULL};
-static const char *light_down[] = {"light", "-U", "1", NULL};
+static const char *light_up[]   = { "/home/chief/volbright.sh", "--uplight", NULL };
+static const char *light_down[]   = { "/home/chief/volbright.sh", "--downlight", NULL };
 
 static const char *screenshot[] = {"flameshot", "gui", NULL};
 
