@@ -6,10 +6,10 @@
 
 **Hotkeys**
 * *Super + r:* Spawn dmenu (search)
-* *Super + t*: Spawn st (terminal)
-* Super + b: Spawn brave (browser)
-* Super + w: Close window (killclient)
-* Super + Shift + t: Toggle Bar
-* Super + Minus: Reduce gaps
-* Super + Equal: Increase gaps
-* Super + Shift + Equal: Remove gaps
+* *Super + t:* Spawn st (terminal)
+* *Super + b:* Spawn brave (browser)
+* *Super + w:* Close window (killclient)
+* *Super + Shift + t:* Toggle Bar
+* *Super + Minus:* Reduce gaps
+* *Super + Equal:* Increase gaps
+* *Super + Shift + Equal:* Remove gaps
