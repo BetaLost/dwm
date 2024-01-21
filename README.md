@@ -3,6 +3,7 @@
 * Full gaps
 * Fancy Bar
 * [Display WM_CLASS instead of _NET_WM_NAME](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only)
+* [Changed rate of movemouse (60->144) and resizemouse (60->288) in dwm.c](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/)
 
 **Hotkeys**
 * *Super + r:* Spawn dmenu (search)
