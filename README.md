@@ -15,17 +15,23 @@
 * *Super + Shift + Equal:* Remove gaps
 * *Super + q:* Quit dwm
 * *Super + 1-5:* Switch to workspace
+* *Super + Shift + 1-5:* Send focused window to workspace
 * *Super + Right Arrow:* Focus next window
 * *Super + Left Arrow:* Focus previous window
 * *Super + Shift + Right Arrow:* Increase master area size
 * *Super + Shift + Left Arrow:* Decrease master area size
 * *Super + i:* Increase number of master windows
 * *Super + d:* Decrease number of master windows
+* *Super + Return:* Cycle focused window to/from master area
 * *Super + Tab:* Switch to previously selected workspace
 * *Super + Space:* Toggle floating mode for current window
 * *Super + z:* Set tiling mode []=
 * *Super + f:* Set floating mode ><>
 * *Super + m:* Set monocle mode [M]
+* *Super + Comma:* Focus previous monitor
+* *Super + Period:* Focus next monitor
+* *Super + Shift + Comma:* Send focused window to previous monitor
+* *Super + Shift + Period:* Send focused window to next monitor
 * *Print screen:* Spawn flameshot (screenshot)
 * *Audio keys:* Increase/decrease/mute volume (runs volbright.sh)
 * *Brightness keys:* Increase/decrease brightness (runs volbright.sh)
