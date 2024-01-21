@@ -3,3 +3,13 @@ Patches:
 * Full gaps
 * Fancy Bar
 * [Display WM_CLASS instead of _NET_WM_NAME](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only)
+
+Hotkeys:
+* Super + r: Spawn dmenu (search)
+* Super + t: Spawn st (terminal)
+* Super + b: Spawn brave (browser)
+* Super + w: Close window (killclient)
+* Super + Shift + t: Toggle Bar
+* Super + Minus: Reduce gaps
+* Super + Equal: Increase gaps
+* Super + Shift + Equal: Remove gaps
