@@ -32,6 +32,8 @@
 * *Super + Period:* Focus next monitor
 * *Super + Shift + Comma:* Send focused window to previous monitor
 * *Super + Shift + Period:* Send focused window to next monitor
+* *Super + 0:* View all windows regardless of tag
+* *Super + Shift + 0:* Send focused window to all workspaces (apply all tags)
 * *Print screen:* Spawn flameshot (screenshot)
 * *Audio keys:* Increase/decrease/mute volume (runs volbright.sh)
 * *Brightness keys:* Increase/decrease brightness (runs volbright.sh)
