@@ -17,6 +17,10 @@
 * *Super + 1-5:* Switch to workspace
 * *Super + Right Arrow:* Focus next window
 * *Super + Left Arrow:* Focus previous window
+* *Super + Shift + Right Arrow:* Increase master area size
+* *Super + Shift + Left Arrow:* Decrease master area size
+* *Super + i:* Increase number of master windows
+* *Super + d:* Decrease number of master windows
 * *Super + Tab:* Switch to previously selected workspace
 * *Super + Space:* Toggle floating mode for current window
 * *Super + z:* Set tiling mode []=
