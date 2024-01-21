@@ -15,6 +15,11 @@
 * *Super + Shift + Equal:* Remove gaps
 * *Super + q:* Quit dwm
 * *Super + 1-5:* Switch to workspace
+* *Super + Right Arrow:* Focus next window
+* *Super + Left Arrow:* Focus previous window
+* *Super + z:* Set tiling mode []=
+* *Super + f:* Set floating mode ><>
+* *Super + m:* Set monocle mode [M]
 * *Print screen:* Spawn flameshot (screenshot)
 * *Audio keys:* Increase/decrease/mute volume (runs volbright.sh)
 * *Brightness keys:* Increase/decrease brightness (runs volbright.sh)
