@@ -13,3 +13,8 @@
 * *Super + Minus:* Reduce gaps
 * *Super + Equal:* Increase gaps
 * *Super + Shift + Equal:* Remove gaps
+* *Super + q:* Quit dwm
+* *Super + 1-5:* Switch to workspace
+* *Print screen* Spawn flameshot (screenshot)
+* *Audio keys:* Increase/decrease/mute volume (runs volbright.sh)
+* *Brightness keys:* Increase/decrease brightness (runs volbright.sh)
