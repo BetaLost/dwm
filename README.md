@@ -4,6 +4,7 @@
 * [Fancy Bar](https://dwm.suckless.org/patches/fancybar/)
 * [Display WM_CLASS instead of _NET_WM_NAME](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only/)
 * [Changed rate of movemouse (60->144) and resizemouse (60->288) in dwm.c](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/)
+* [Added a function to center a floating window](https://www.reddit.com/r/suckless/comments/cphe3h/comment/ewqnx65/)
 
 **Hotkeys**
 * *Super + r:* Spawn dmenu (search)
@@ -26,6 +27,7 @@
 * *Super + Return:* Cycle focused window to/from master area
 * *Super + Tab:* Switch to previously selected workspace
 * *Super + Space:* Toggle floating mode for current window
+* *Super + c:* Center a floating window
 * *Super + z:* Set tiling mode []=
 * *Super + f:* Set floating mode ><>
 * *Super + m:* Set monocle mode [M]
