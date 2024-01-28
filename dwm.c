@@ -59,7 +59,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeIdle }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -707,17 +707,18 @@ drawbar(Monitor *m)
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0, n = 0;
 	Client *c;
-
+	unsigned int tagscheme;
+	
 	if (!m->showbar)
 		return;
-
+	
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
 		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
 	}
-
+	
 	for (c = m->clients; c; c = c->next) {
 		if (ISVISIBLE(c))
 			n++;
@@ -725,7 +726,19 @@ drawbar(Monitor *m)
 		if (c->isurgent)
 			urg |= c->tags;
 	}
+	
 	x = 0;
+	for (i = 0; i < LENGTH(tags); i++) {
+		tagscheme = SchemeIdle;
+		w = TEXTW(tags[i]);
+		if (m->tagset[m->seltags] & 1 << i) tagscheme = SchemeSel;
+		else if (occ & 1 << i) tagscheme = SchemeNorm;
+		drw_setscheme(drw, scheme[tagscheme]);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+		x += w;
+	}
+	
+	/*
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
@@ -736,15 +749,17 @@ drawbar(Monitor *m)
 				urg & 1 << i);
 		x += w;
 	}
+	*/
+	
 	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
-
+	
 	if ((w = m->ww - tw - x) > bh) {
 		if (n > 0) {
 			tw = TEXTW(m->sel->name) + lrpad;
 			mw = (tw >= w || n == 1) ? 0 : (w - tw) / (n - 1);
-
+			
 			i = 0;
 			for (c = m->clients; c; c = c->next) {
 				if (!ISVISIBLE(c) || c == m->sel)
@@ -757,12 +772,12 @@ drawbar(Monitor *m)
 			}
 			if (i > 0)
 				mw += ew / i;
-
+				
 			for (c = m->clients; c; c = c->next) {
 				if (!ISVISIBLE(c))
 					continue;
 				tw = MIN(m->sel == c ? w : mw, TEXTW(c->name));
-
+				
 				drw_setscheme(drw, scheme[m->sel == c ? SchemeSel : SchemeNorm]);
 				if (tw > 0) /* trap special handling of 0 in drw_text */
 					drw_text(drw, x, 0, tw, bh, lrpad / 2, c->name, 0);
