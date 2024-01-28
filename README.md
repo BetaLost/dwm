@@ -1,4 +1,4 @@
-# dwm
+# dwm 6.4
 **Patches**
 * [Full gaps](https://dwm.suckless.org/patches/fullgaps/)
 * [Fancy Bar](https://dwm.suckless.org/patches/fancybar/)
