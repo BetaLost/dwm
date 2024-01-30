@@ -2,6 +2,7 @@
 **Patches**
 * [Full gaps](https://dwm.suckless.org/patches/fullgaps/)
 * [Fancy Bar](https://dwm.suckless.org/patches/fancybar/)
+* [Center](https://dwm.suckless.org/patches/center/)
 * [Display WM_CLASS instead of _NET_WM_NAME](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only/)
 * [Changed rate of movemouse (60->144) and resizemouse (60->288) in dwm.c](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/)
 * [Added a function to center a floating window](https://www.reddit.com/r/suckless/comments/cphe3h/comment/ewqnx65/)
@@ -39,5 +40,7 @@
 * *Super + 0:* View all windows regardless of tag
 * *Super + Shift + 0:* Send focused window to all workspaces (apply all tags)
 * *Print screen:* Spawn flameshot (screenshot)
-* *Audio keys:* Increase/decrease/mute volume (runs volbright.sh)
-* *Brightness keys:* Increase/decrease brightness (runs volbright.sh)
+* *Super + Shift + f:* Display weather information in a floating st window (runs utilities.sh)
+* *Super + Shift + c:* Display clock in a floating st window (runs utilities.sh)
+* *Audio keys:* Increase/decrease/mute volume (runs utilities.sh)
+* *Brightness keys:* Increase/decrease brightness (runs utilities.sh)
