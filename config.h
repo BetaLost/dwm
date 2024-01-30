@@ -52,15 +52,16 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *screenshot[] = {"flameshot", "gui", NULL};
 
-static const char *upvol[]   = { "/home/chief/utilities.sh", "--upvol", NULL };
-static const char *downvol[]   = { "/home/chief/utilities.sh", "--downvol", NULL };
-static const char *mutevol[]   = { "/home/chief/utilities.sh", "--mutevol", NULL };
+static const char *upvol[]   = { "/home/chief/.config/utilities.sh", "--upvol", NULL };
+static const char *downvol[]   = { "/home/chief/.config/utilities.sh", "--downvol", NULL };
+static const char *mutevol[]   = { "/home/chief/.config/utilities.sh", "--mutevol", NULL };
 
-static const char *light_up[]   = { "/home/chief/utilities.sh", "--uplight", NULL };
-static const char *light_down[]   = { "/home/chief/utilities.sh", "--downlight", NULL };
+static const char *light_up[]   = { "/home/chief/.config/utilities.sh", "--uplight", NULL };
+static const char *light_down[]   = { "/home/chief/.config/utilities.sh", "--downlight", NULL };
 
-static const char *weathercmd[] = { "/home/chief/utilities.sh", "--weather", NULL };
-static const char *clockcmd[] = { "/home/chief/utilities.sh", "--clock", NULL };
+static const char *weathercmd[] = { "/home/chief/.config/utilities.sh", "--weather", NULL };
+static const char *clockcmd[] = { "/home/chief/.config/utilities.sh", "--clock", NULL };
+static const char *neofetchcmd[] = { "/home/chief/.config/utilities.sh", "--neofetch", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -85,6 +86,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_c,      centerfloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = weathercmd } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clockcmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neofetchcmd } },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
