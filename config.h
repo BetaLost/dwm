@@ -18,9 +18,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      instance    title       tags mask     iscentered     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,             1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       1,             0,           -1 },
+	{ "floatst",  NULL,       NULL,       0,            1,             1,           -1 },
 };
 
 /* layout(s) */
@@ -49,15 +50,17 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
-
-static const char *upvol[]   = { "/home/chief/volbright.sh", "--upvol", NULL };
-static const char *downvol[]   = { "/home/chief/volbright.sh", "--downvol", NULL };
-static const char *mutevol[]   = { "/home/chief/volbright.sh", "--mutevol", NULL };
-
-static const char *light_up[]   = { "/home/chief/volbright.sh", "--uplight", NULL };
-static const char *light_down[]   = { "/home/chief/volbright.sh", "--downlight", NULL };
-
 static const char *screenshot[] = {"flameshot", "gui", NULL};
+
+static const char *upvol[]   = { "/home/chief/utilities.sh", "--upvol", NULL };
+static const char *downvol[]   = { "/home/chief/utilities.sh", "--downvol", NULL };
+static const char *mutevol[]   = { "/home/chief/utilities.sh", "--mutevol", NULL };
+
+static const char *light_up[]   = { "/home/chief/utilities.sh", "--uplight", NULL };
+static const char *light_down[]   = { "/home/chief/utilities.sh", "--downlight", NULL };
+
+static const char *weathercmd[] = { "/home/chief/utilities.sh", "--weather", NULL };
+static const char *clockcmd[] = { "/home/chief/utilities.sh", "--clock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -80,6 +83,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_c,      centerfloating, {0} },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = weathercmd } },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clockcmd } },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -92,9 +97,9 @@ static const Key keys[] = {
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol } },
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                     XF86XK_AudioMute, spawn,          {.v = mutevol } },
-	{ 0,               XF86XK_MonBrightnessUp, spawn,          {.v = light_up} },
-	{ 0,             XF86XK_MonBrightnessDown, spawn,          {.v = light_down} },
-	{ 0,                             XK_Print, spawn,          {.v = screenshot} },
+	{ 0,               XF86XK_MonBrightnessUp, spawn,          {.v = light_up } },
+	{ 0,             XF86XK_MonBrightnessDown, spawn,          {.v = light_down } },
+	{ 0,                             XK_Print, spawn,          {.v = screenshot } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
