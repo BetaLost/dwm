@@ -731,20 +731,9 @@ drawbar(Monitor *m)
 	}
 	
 	x = 0;
-	for (i = 0; i < LENGTH(tags); i++) {
-		tagscheme = SchemeIdle;
-		w = TEXTW(tags[i]);
-		if (m->tagset[m->seltags] & 1 << i) tagscheme = SchemeSel;
-		else if (occ & 1 << i) tagscheme = SchemeNorm;
-		drw_setscheme(drw, scheme[tagscheme]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
-			drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
-			
-		x += w;
-	}
 	
 	/*
+	 * ORIGINAL SCHEME SELECTION
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
@@ -756,6 +745,27 @@ drawbar(Monitor *m)
 		x += w;
 	}
 	*/
+	
+	for (i = 0; i < LENGTH(tags); i++) {
+		w = TEXTW(tags[i]);
+		
+		/*
+		 * Default scheme is idle, if the tag is selected set to SchemeSel, if not selected but occupied set to SchemeNorm
+		tagscheme = SchemeIdle;
+		if (m->tagset[m->seltags] & 1 << i) tagscheme = SchemeSel;
+		else if (occ & 1 << i) tagscheme = SchemeNorm;
+		drw_setscheme(drw, scheme[tagscheme]);
+		*/
+		
+		// 4 different schemes possible. To set scheme for selected but not occupied change the first SchemeIdle
+		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? (occ & 1 << i ? SchemeSel : SchemeIdle) : (occ & 1 << i ? SchemeNorm : SchemeIdle)]);
+		
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+		if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
+			drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
+			
+		x += w;
+	}
 	
 	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
