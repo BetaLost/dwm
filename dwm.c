@@ -710,7 +710,7 @@ drawbar(Monitor *m)
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0, n = 0;
 	Client *c;
-	unsigned int tagscheme;
+	// unsigned int tagscheme;
 	
 	if (!m->showbar)
 		return;
@@ -799,6 +799,8 @@ drawbar(Monitor *m)
 					drw_text(drw, x, 0, tw, bh, lrpad / 2, c->name, 0);
 				if (c->isfloating)
 					drw_rect(drw, x + boxs, boxs, boxw, boxw, c->isfixed, 0);
+				if (m->sel == c)
+					drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, tw - (ulinepad * 2), ulinestroke, 1, 0);
 				x += tw;
 				w -= tw;
 			}
