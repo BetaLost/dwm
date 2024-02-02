@@ -8,7 +8,8 @@
 * [Changed rate of movemouse (60->144) and resizemouse (60->288) in `dwm.c`](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/)
 * [Added a function in `dwm.c` to center a floating window](https://www.reddit.com/r/suckless/comments/cphe3h/comment/ewqnx65/)
 * [Modified `drawbar` function in `dwm.c` to set different color schemes depending on tag status](https://www.reddit.com/r/suckless/comments/o9fqci/comment/h3c6jhr/)
-* ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
+* [Modified `drawbar` function in `dwm.c` to underline selected client](https://github.com/BetaLost/dwm/blob/main/dwm.c#L802-L803)
+* ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579-L587) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
 
 **Hotkeys**
 * *Super + r:* Spawn dmenu (search)
