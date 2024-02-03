@@ -5,11 +5,12 @@
 * [Center](https://dwm.suckless.org/patches/center/)
 * [Underline Tags](https://dwm.suckless.org/patches/underlinetags/)
 * [Status2d & Status Padding](https://github.com/BetaLost/dwm/commit/42839e104b0b2408b29f04a83a2b1489f93b271d) - [Adapted from ChadWM](https://github.com/siduck/chadwm)
-* [Display WM_CLASS instead of _NET_WM_NAME in `dwm.c`](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only/) - Check lines [1652](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1652) & [2084](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L2084)
-* [Changed rate of movemouse (60->144) and resizemouse (60->288) in `dwm.c`](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/) - Check lines [1242](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1242) & [1396](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1396)
+* [Display WM_CLASS instead of _NET_WM_NAME in `dwm.c`](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only/) - References: [1652](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1652) & [2084](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L2084)
+* [Changed rate of movemouse (60->144) and resizemouse (60->288) in `dwm.c`](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/) - References [movemouse](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1242) & [resizemouse](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1396)
 * [Added a function in `dwm.c` to center a floating window](https://github.com/BetaLost/dwm/blob/2ede06ded3f8d5a3b74c7ff671f4e81d21977ef1/dwm.c#L2212-L2227) - [Reddit Post](https://www.reddit.com/r/suckless/comments/cphe3h/comment/ewqnx65/)
 * [Modified `drawbar` function in `dwm.c` to set different color schemes depending on tag status](https://github.com/BetaLost/dwm/blob/2ede06ded3f8d5a3b74c7ff671f4e81d21977ef1/dwm.c#L761) - [Reddit Post](https://www.reddit.com/r/suckless/comments/o9fqci/comment/h3c6jhr/)
 * [Modified `drawbar` function in `dwm.c` to underline selected client](https://github.com/BetaLost/dwm/blob/2ede06ded3f8d5a3b74c7ff671f4e81d21977ef1/dwm.c#L802-L803)
+* [Modified `drawbar` function in `dwm.c` to shorten client name text for certain programs](https://github.com/BetaLost/dwm/blob/36eaae22087e6352c7942e2a03ad0530010dd2df/dwm.c#L880-L884)
 * ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579-L587) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
 
 **Hotkeys**
