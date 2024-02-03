@@ -743,7 +743,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 		isCode = 0;
 	text = p;
 	
-	w += horizpadbar;
+	w += horizpadbar + 2 * sp;
 	ret = x = m->ww - w;
 
 	drw_setscheme(drw, scheme[LENGTH(colors)]);
