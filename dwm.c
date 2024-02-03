@@ -820,7 +820,6 @@ drawbar(Monitor *m)
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0, n = 0;
 	Client *c;
-	// unsigned int tagscheme;
 	
 	if (!m->showbar)
 		return;
@@ -839,37 +838,14 @@ drawbar(Monitor *m)
 	}
 	
 	x = 0;
-	
-	/*
-	 * ORIGINAL SCHEME SELECTION
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
-		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		if (occ & 1 << i)
-			drw_rect(drw, x + boxs, boxs, boxw, boxw,
-				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-				urg & 1 << i);
-		x += w;
-	}
-	*/
-	
-	for (i = 0; i < LENGTH(tags); i++) {
-		w = TEXTW(tags[i]);
-		
-		/*
-		 * Default scheme is idle, if the tag is selected set to SchemeSel, if not selected but occupied set to SchemeNorm
-		tagscheme = SchemeIdle;
-		if (m->tagset[m->seltags] & 1 << i) tagscheme = SchemeSel;
-		else if (occ & 1 << i) tagscheme = SchemeNorm;
-		drw_setscheme(drw, scheme[tagscheme]);
-		*/
 		
 		// 4 different schemes possible. To set scheme for selected but not occupied change the first SchemeIdle
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? (occ & 1 << i ? SchemeSel : SchemeIdle) : (occ & 1 << i ? SchemeNorm : SchemeIdle)]);
 		
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		if (ulineall || m->tagset[m->seltags] & 1 << i) /* if there are conflicts, just move these lines directly underneath both 'drw_setscheme' and 'drw_text' :) */
+		if (ulineall || m->tagset[m->seltags] & 1 << i)
 			drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
 			
 		x += w;
@@ -900,11 +876,18 @@ drawbar(Monitor *m)
 			for (c = m->clients; c; c = c->next) {
 				if (!ISVISIBLE(c))
 					continue;
-				tw = MIN(m->sel == c ? w : mw, TEXTW(c->name));
+				
+				char *title = c->name;
+				if (strcmp(title, "st-256color") == 0)
+					title = "st";
+				else if (strcmp(title, "brave-browser") == 0)
+					title = "brave";
+				
+				tw = MIN(m->sel == c ? w : mw, TEXTW(title));
 				
 				drw_setscheme(drw, scheme[m->sel == c ? SchemeSel : SchemeNorm]);
 				if (tw > 0) /* trap special handling of 0 in drw_text */
-					drw_text(drw, x, 0, tw, bh, lrpad / 2, c->name, 0);
+					drw_text(drw, x, 0, tw, bh, lrpad / 2, title, 0);
 				if (c->isfloating)
 					drw_rect(drw, x + boxs, boxs, boxw, boxw, c->isfixed, 0);
 				if (m->sel == c)
