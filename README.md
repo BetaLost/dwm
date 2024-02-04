@@ -7,7 +7,7 @@
 * [Status2d](https://dwm.suckless.org/patches/status2d/)
 * [Status Padding](https://github.com/BetaLost/dwm/commit/42839e104b0b2408b29f04a83a2b1489f93b271d) - Reference: [ChadWM](https://github.com/siduck/chadwm)
 * [Bar Padding](https://github.com/BetaLost/dwm/commit/c4e325d27afee974f5bfd06fb3ce03d06e22efe2) - There are 2 known issues caused by this patch: 
-  * ~~The status bar does not account for the new width of the bar which means horizontal status padding is broken~~ Fixed.. [I think](https://github.com/BetaLost/dwm/commit/805439a3b43d8084eb9020a3fc8e9761800fce40)
+  * ~~The status bar does not account for the new width of the bar which means horizontal status padding is broken~~ - Fixed (I think)
   * The client name text is no longer cropped when there is no space, it just starts again
 * [Display WM_CLASS instead of _NET_WM_NAME in `dwm.c`](https://www.reddit.com/r/dwm/comments/ssm1ph/how_to_make_it_so_that_the_window_title_only/) - References: [1652](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1652) & [2084](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L2084)
 * [Changed rate of movemouse (60->144) and resizemouse (60->288) in `dwm.c`](https://www.reddit.com/r/suckless/comments/tlxaqr/comment/i2ovsb1/) - References: [movemouse](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1242) & [resizemouse](https://github.com/BetaLost/dwm/blob/f452d3ea748492e43054e3c43639894b394dd178/dwm.c#L1396)
