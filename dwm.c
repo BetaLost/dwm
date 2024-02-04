@@ -881,9 +881,9 @@ drawbar(Monitor *m)
 					continue;
 				
 				char *title = c->name;
-				if (strcmp(title, "st-256color") == 0)
+				if (!strcmp(title, "st-256color"))
 					title = "st";
-				else if (strcmp(title, "brave-browser") == 0)
+				else if (!strcmp(title, "brave-browser"))
 					title = "brave";
 				
 				tw = MIN(m->sel == c ? w : mw, TEXTW(title));
