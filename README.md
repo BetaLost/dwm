@@ -12,7 +12,7 @@
 * [Added a function in `dwm.c` to center a floating window](https://github.com/BetaLost/dwm/blob/2ede06ded3f8d5a3b74c7ff671f4e81d21977ef1/dwm.c#L2212-L2227) - [Reddit Post](https://www.reddit.com/r/suckless/comments/cphe3h/comment/ewqnx65/)
 * [Modified `drawbar` function in `dwm.c` to set different color schemes depending on tag status](https://github.com/BetaLost/dwm/blob/2ede06ded3f8d5a3b74c7ff671f4e81d21977ef1/dwm.c#L761) - [Reddit Post](https://www.reddit.com/r/suckless/comments/o9fqci/comment/h3c6jhr/)
 * [Modified `drawbar` function in `dwm.c` to underline selected client](https://github.com/BetaLost/dwm/blob/2ede06ded3f8d5a3b74c7ff671f4e81d21977ef1/dwm.c#L802-L803)
-* [Modified `drawbar` function in `dwm.c` to shorten client name text for certain programs](https://github.com/BetaLost/dwm/blob/36eaae22087e6352c7942e2a03ad0530010dd2df/dwm.c#L880-L884)
+* [Modified `drawbar` function in `dwm.c` to shorten client name text for certain programs](https://github.com/BetaLost/dwm/blob/16034c5586e7af4e1c7f0a500136fba519ca7923/dwm.c#L883-L887)
 * ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579-L587) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
 
 **Hotkeys**
