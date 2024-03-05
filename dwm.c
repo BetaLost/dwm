@@ -798,10 +798,10 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 				} else if (text[i] == 'l') {
 					x += (bh - vertpadbar) / 2;
 					drw_semicircle(drw, x - 2 * sp, (vertpadbar / 2) + (bh - vertpadbar) / 2, (bh - vertpadbar) / 2, 1);
-                } else if (text[i] == 'e') {
+				} else if (text[i] == 'e') {
 					drw_semicircle(drw, x - 2 * sp, (vertpadbar / 2) + (bh - vertpadbar) / 2, (bh - vertpadbar) / 2, 0);
 					x += (bh - vertpadbar) / 2;
-                }
+				}
 			}
 
 			text = text + i + 1;
