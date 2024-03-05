@@ -235,6 +235,18 @@ drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int
 		XDrawRectangle(drw->dpy, drw->drawable, drw->gc, x, y, w - 1, h - 1);
 }
 
+void
+drw_semicircle(Drw *drw, int x, int y, unsigned int radius, int toleft)
+{
+	if (!drw || !drw->scheme)
+		return;
+	XSetForeground(drw->dpy, drw->gc, drw->scheme[ColBg].pixel);
+	if (toleft)
+		XFillArc(drw->dpy, drw->drawable, drw->gc, x - radius, y - radius, radius * 2, radius * 2, 90 * 64, 180 * 64);
+	else
+		XFillArc(drw->dpy, drw->drawable, drw->gc, x - radius, y - radius, radius * 2, radius * 2, 90 * 64, -180 * 64);
+}
+
 int
 drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert)
 {

@@ -730,6 +730,8 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 				text[i] = '^';
 				if (text[++i] == 'f')
 					w += atoi(text + ++i);
+				else if (text[i] == 'l' || text[i] == 'e')
+					w += (bh - vertpadbar) / 2; 
 			} else {
 				isCode = 0;
 				text = text + i + 1;
@@ -793,7 +795,13 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 					drw_rect(drw, rx + x - 2 * sp, ry + borderpx + vertpadbar / 2, rw, rh, 1, 0);
 				} else if (text[i] == 'f') {
 					x += atoi(text + ++i);
-				}
+				} else if (text[i] == 'l') {
+					x += (bh - vertpadbar) / 2;
+					drw_semicircle(drw, x - 2 * sp, (vertpadbar / 2) + (bh - vertpadbar) / 2, (bh - vertpadbar) / 2, 1);
+                } else if (text[i] == 'e') {
+					drw_semicircle(drw, x - 2 * sp, (vertpadbar / 2) + (bh - vertpadbar) / 2, (bh - vertpadbar) / 2, 0);
+					x += (bh - vertpadbar) / 2;
+                }
 			}
 
 			text = text + i + 1;

@@ -28,8 +28,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     iscentered     isfloating   monitor */
-	{ "floatst",  NULL,       NULL,       0,            1,             1,           -1 },
+	/* class             instance    title       tags mask     iscentered     isfloating   monitor */
+	{ "floatst",         NULL,       NULL,       0,            1,             1,           -1 },
+	{ "kdeconnect.app",  NULL,       NULL,       0,            1,             1,           -1 },
 };
 
 /* layout(s) */
@@ -55,10 +56,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", "10", "-m", dmenumon, "-fn", dmenufont, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-c", "-l", "10", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "brave", NULL };
-static const char *screenshot[] = {"flameshot", "gui", NULL};
+static const char *browsercmd[]  = { "brave", "--password-store=basic", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
+static const char *kdeconnectcmd[] = { "kdeconnect-app", NULL };
 
 static const char *upvol[]   = { "/home/chief/.config/utilities.sh", "--upvol", NULL };
 static const char *downvol[]   = { "/home/chief/.config/utilities.sh", "--downvol", NULL };
@@ -76,6 +78,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_k,      spawn,          {.v = kdeconnectcmd } },
 	{ MODKEY|ShiftMask,             XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
