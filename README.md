@@ -17,6 +17,7 @@
 * [Modified `drawstatusbar` function in `dwm.c` (status2d) and added a function in `drw.c` to draw semicircles](https://github.com/BetaLost/dwm/commit/eb03e8b03b7fc2206c4bb471252cc296fb621de4)
 * ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579-L587) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
 
+
 **Hotkeys**
 | Keys | Action |
 | --- | --- |
@@ -55,6 +56,7 @@
 | Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
 | Audio keys | Increase/decrease/mute volume (runs utilities.sh) |
 | Brightness keys | Increase/decrease brightness (runs utilities.sh) |
+
 
 **Sections**
 
