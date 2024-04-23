@@ -57,6 +57,7 @@
 | Brightness keys | Increase/decrease brightness (runs utilities.sh) |
 
 **Sections**
+
 *Click on section to toggle its function*
 | Section | Change |
 | --- | --- |
