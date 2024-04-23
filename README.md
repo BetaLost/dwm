@@ -55,3 +55,17 @@
 | Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
 | Audio keys | Increase/decrease/mute volume (runs utilities.sh) |
 | Brightness keys | Increase/decrease brightness (runs utilities.sh) |
+
+**Sections**
+*Click on section to toggle its function*
+| Section | Change |
+| --- | --- |
+| Volume | Toggle mute |
+| Brightness | None |
+| CPU | Hide CPU temperature (default: show CPU temperature) |
+| RAM | Always show usage in MiB (default: if usage >= 1024, show in GiB) |
+| Network | None |
+| Battery | Display time remaining on battery (default: percentage) |
+| Prayer | Display time remaining to next prayer (default: display only current prayer name) |
+| Time | Toggle between 12-hour and 24-hour time (default: display 24-hour time) |
+| Date | Toggle between Gregorian and Hijri calendars (default: display Gregorian date) |
