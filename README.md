@@ -64,8 +64,8 @@
 | Volume | Toggle mute |
 | Brightness | None |
 | CPU | Hide CPU temperature (default: show CPU temperature) |
-| RAM | Always show usage in MiB (default: if usage >= 1024, show in GiB) |
-| Network | None |
+| RAM | Always show usage in MiB (default: if usage > 1024, show in GiB) |
+| Network | Always show statistics in KiB (default: if data > 1024, show in MiB) |
 | Battery | Display time remaining on battery (default: percentage) |
 | Prayer | Display time remaining to next prayer (default: display only current prayer name) |
 | Time | Toggle between 12-hour and 24-hour time (default: display 24-hour time) |
