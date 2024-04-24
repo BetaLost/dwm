@@ -60,6 +60,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-i", "-c", "-l", "10", "-m", dmenumon, "-fn", dmenufont, NULL };
+static const char *powermenucmd[] = { "pkill", "-SIGRTMIN+16", "-f", "dwmbar.sh", NULL };
+
 static const char *termcmd[] = { "st", NULL };
 static const char *browsercmd[] = { "brave", "--password-store=basic", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
@@ -101,6 +103,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_c,      centerfloating, {0} },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenucmd } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = connectbluecmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = bluebatcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = weathercmd } },
