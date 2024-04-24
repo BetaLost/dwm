@@ -31,7 +31,7 @@
 | Super + Right Arrow | Focus next window |
 | Super + Left Arrow | Focus previous window |
 | Super + Space | Toggle floating mode for current window |
-| Super + c | Center current window (if floating) |
+| Super + c | Center focused window (if floating) |
 | Super + Shift + n | Run neofetch in a floating st window (runs utilities.sh) |
 | Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
 | Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
@@ -52,7 +52,7 @@
 | --- | --- |
 | Super + 1-5 | Switch to workspace |
 | Super + Shift + 1-5 | Send focused window to workspace |
-| Super + Tab | Switch to previously selected workspace |
+| Super + Tab | Switch back to previously selected workspace |
 | Super + 0 | View all windows regardless of tag |
 | Super + Shift + 0 | Send focused window to all workspaces (apply all tags) |
 
