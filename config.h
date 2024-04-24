@@ -60,17 +60,20 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-i", "-c", "-l", "10", "-m", dmenumon, "-fn", dmenufont, NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "brave", "--password-store=basic", NULL };
+static const char *termcmd[] = { "st", NULL };
+static const char *browsercmd[] = { "brave", "--password-store=basic", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *kdeconnectcmd[] = { "kdeconnect-app", NULL };
 
-static const char *upvol[]   = { "/home/chief/.config/utilities.sh", "--upvol", NULL };
-static const char *downvol[]   = { "/home/chief/.config/utilities.sh", "--downvol", NULL };
-static const char *mutevol[]   = { "/home/chief/.config/utilities.sh", "--mutevol", NULL };
+static const char *upvol[] = { "/home/chief/.config/utilities.sh", "--upvol", NULL };
+static const char *downvol[] = { "/home/chief/.config/utilities.sh", "--downvol", NULL };
+static const char *mutevol[] = { "/home/chief/.config/utilities.sh", "--mutevol", NULL };
 
-static const char *light_up[]   = { "/home/chief/.config/utilities.sh", "--uplight", NULL };
-static const char *light_down[]   = { "/home/chief/.config/utilities.sh", "--downlight", NULL };
+static const char *light_up[] = { "/home/chief/.config/utilities.sh", "--uplight", NULL };
+static const char *light_down[] = { "/home/chief/.config/utilities.sh", "--downlight", NULL };
+
+static const char *connectbluecmd[] = { "/home/chief/.config/utilities.sh", "--connectblue", NULL };
+static const char *bluebatcmd[] = { "/home/chief/.config/utilities.sh", "--checkbat", NULL };
 
 static const char *weathercmd[] = { "/home/chief/.config/utilities.sh", "--weather", NULL };
 static const char *clockcmd[] = { "/home/chief/.config/utilities.sh", "--clock", NULL };
@@ -98,6 +101,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_c,      centerfloating, {0} },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = connectbluecmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = bluebatcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = weathercmd } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clockcmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neofetchcmd } },
