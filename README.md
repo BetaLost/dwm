@@ -50,6 +50,9 @@
 | Super + 0 | View all windows regardless of tag |
 | Super + Shift + 0 | Send focused window to all workspaces (apply all tags) |
 | Print screen | Spawn flameshot (screenshot) |
+| Super + Shift + r | Connect bluetooth device (runs utilities.sh) |
+| Super + Shift + d | Check bluetooth device battery (runs utilities.sh) |
+| Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
 | Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
 | Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
 | Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
