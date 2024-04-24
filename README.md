@@ -18,7 +18,8 @@
 * ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579-L587) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
 
 **Hotkeys**
-> Clients
+
+> **Clients**
 
 | Keys | Action |
 | --- | --- |
@@ -35,7 +36,7 @@
 | Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
 | Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
 
-> Master Area
+> **Master Area**
 
 | Keys | Action |
 | --- | --- |
@@ -45,7 +46,7 @@
 | Super + d | Decrease number of master windows |
 | Super + Return | Cycle focused window to/from master area |
 
-> Workspaces
+> **Workspaces**
 
 | Keys | Action |
 | --- | --- |
@@ -55,7 +56,7 @@
 | Super + 0 | View all windows regardless of tag |
 | Super + Shift + 0 | Send focused window to all workspaces (apply all tags) |
 
-> Monitors
+> **Monitors**
 
 | Keys | Action |
 | --- | --- |
@@ -64,7 +65,7 @@
 | Super + Shift + Comma | Send focused window to previous monitor |
 | Super + Shift + Period | Send focused window to next monitor |
 
-> Gaps
+> **Gaps**
 
 | Keys | Action |
 | --- | --- |
@@ -72,7 +73,7 @@
 | Super + Equal | Increase gaps |
 | Super + Shift + Equal | Remove gaps |
 
-> Modes
+> **Modes**
 
 | Keys | Action |
 | --- | --- |
@@ -80,20 +81,20 @@
 | Super + f | Set floating mode ><> |
 | Super + m | Set monocle mode [M] |
 
-> Bar
+> **Bar**
 
 | Keys | Action |
 | --- | --- |
 | Super + Shift + t | Toggle Bar |
 
-> Bluetooth
+> **Bluetooth**
 
 | Keys | Action |
 | --- | --- |
 | Super + Shift + r | Connect bluetooth device (runs utilities.sh) |
 | Super + Shift + d | Check bluetooth device battery (runs utilities.sh) |
 
-> Fn keys
+> **Fn keys**
 
 | Keys | Action |
 | --- | --- |
@@ -102,7 +103,8 @@
 
 **Sections**
 
-*Click on section to toggle its function*
+> **Click on a section to toggle its function**
+
 | Section | Change |
 | --- | --- |
 | Volume | Toggle mute |
