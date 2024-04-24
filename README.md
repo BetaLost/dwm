@@ -19,6 +19,7 @@
 
 **Hotkeys**
 > Clients
+
 | Keys | Action |
 | --- | --- |
 | Super + r | Spawn dmenu (search) |
@@ -35,6 +36,7 @@
 | Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
 
 > Master Area
+
 | Keys | Action |
 | --- | --- |
 | Super + Shift + Right Arrow | Increase master area size |
@@ -44,6 +46,7 @@
 | Super + Return | Cycle focused window to/from master area |
 
 > Workspaces
+
 | Keys | Action |
 | --- | --- |
 | Super + 1-5 | Switch to workspace |
@@ -53,6 +56,7 @@
 | Super + Shift + 0 | Send focused window to all workspaces (apply all tags) |
 
 > Monitors
+
 | Keys | Action |
 | --- | --- |
 | Super + Comma | Focus previous monitor |
@@ -61,6 +65,7 @@
 | Super + Shift + Period | Send focused window to next monitor |
 
 > Gaps
+
 | Keys | Action |
 | --- | --- |
 | Super + Minus | Reduce gaps |
@@ -68,6 +73,7 @@
 | Super + Shift + Equal | Remove gaps |
 
 > Modes
+
 | Keys | Action |
 | --- | --- |
 | Super + z | Set tiling mode []= |
@@ -75,17 +81,22 @@
 | Super + m | Set monocle mode [M] |
 
 > Bar
+
 | Keys | Action |
 | --- | --- |
 | Super + Shift + t | Toggle Bar |
 
 > Bluetooth
+
 | Keys | Action |
 | --- | --- |
 | Super + Shift + r | Connect bluetooth device (runs utilities.sh) |
 | Super + Shift + d | Check bluetooth device battery (runs utilities.sh) |
 
 > Fn keys
+
+| Keys | Action |
+| --- | --- |
 | Audio keys | Increase/decrease/mute volume (runs utilities.sh) |
 | Brightness keys | Increase/decrease brightness (runs utilities.sh) |
 
