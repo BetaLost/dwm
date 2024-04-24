@@ -1,5 +1,5 @@
 # dwm 6.4
-**Patches**
+## Patches
 * [Full Gaps](https://dwm.suckless.org/patches/fullgaps/)
 * [Fancy Bar](https://dwm.suckless.org/patches/fancybar/)
 * [Center](https://dwm.suckless.org/patches/center/)
