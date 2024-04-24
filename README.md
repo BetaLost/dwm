@@ -32,9 +32,9 @@
 | Super + Left Arrow | Focus previous window |
 | Super + Space | Toggle floating mode for current window |
 | Super + c | Center current window (if floating) |
-| Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
+| Super + Shift + n | Run neofetch in a floating st window (runs utilities.sh) |
 | Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
-| Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
+| Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
 
 > **Master Area**
 
