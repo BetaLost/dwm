@@ -27,6 +27,7 @@
 | Super + t | Spawn st (terminal) |
 | Super + b | Spawn brave (browser) |
 | Print screen | Spawn flameshot (screenshot) |
+| Super + Shift + p | Display power menu |
 | Super + w | Close window (killclient) |
 | Super + Right Arrow | Focus next window |
 | Super + Left Arrow | Focus previous window |
@@ -116,3 +117,4 @@
 | Prayer | Display time remaining to next prayer (default: display only current prayer name) |
 | Time | Toggle between 12-hour and 24-hour time (default: display 24-hour time) |
 | Date | Toggle between Gregorian and Hijri calendars (default: display Gregorian date) |
+| Power | Display power menu |
