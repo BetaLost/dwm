@@ -18,44 +18,74 @@
 * ~~[Modified `drawbar` function in `dwm.c` to set a color scheme for inactive tags](https://gitlab.com/d1str0l3ss/d1str0l3ss-dwm/-/blob/master/dwm.c?ref_type=heads#L579-L587) - [Reddit Post](https://www.reddit.com/r/unixporn/comments/13af8z1/comment/jj7cxeo/)~~
 
 **Hotkeys**
+> Clients
 | Keys | Action |
 | --- | --- |
 | Super + r | Spawn dmenu (search) |
 | Super + t | Spawn st (terminal) |
 | Super + b | Spawn brave (browser) |
+| Print screen | Spawn flameshot (screenshot) |
 | Super + w | Close window (killclient) |
-| Super + Shift + t | Toggle Bar |
-| Super + Minus | Reduce gaps |
-| Super + Equal | Increase gaps |
-| Super + Shift + Equal | Remove gaps |
-| Super + 1-5 | Switch to workspace |
-| Super + Shift + 1-5 | Send focused window to workspace |
 | Super + Right Arrow | Focus next window |
 | Super + Left Arrow | Focus previous window |
+| Super + Space | Toggle floating mode for current window |
+| Super + c | Center current window (if floating) |
+| Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
+| Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
+| Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
+
+> Master Area
+| Keys | Action |
+| --- | --- |
 | Super + Shift + Right Arrow | Increase master area size |
 | Super + Shift + Left Arrow | Decrease master area size |
 | Super + i | Increase number of master windows |
 | Super + d | Decrease number of master windows |
 | Super + Return | Cycle focused window to/from master area |
+
+> Workspaces
+| Keys | Action |
+| --- | --- |
+| Super + 1-5 | Switch to workspace |
+| Super + Shift + 1-5 | Send focused window to workspace |
 | Super + Tab | Switch to previously selected workspace |
-| Super + Space | Toggle floating mode for current window |
-| Super + c | Center a floating window |
-| Super + z | Set tiling mode []= |
-| Super + f | Set floating mode ><> |
-| Super + m | Set monocle mode [M] |
+| Super + 0 | View all windows regardless of tag |
+| Super + Shift + 0 | Send focused window to all workspaces (apply all tags) |
+
+> Monitors
+| Keys | Action |
+| --- | --- |
 | Super + Comma | Focus previous monitor |
 | Super + Period | Focus next monitor |
 | Super + Shift + Comma | Send focused window to previous monitor |
 | Super + Shift + Period | Send focused window to next monitor |
-| Super + 0 | View all windows regardless of tag |
-| Super + Shift + 0 | Send focused window to all workspaces (apply all tags) |
-| Print screen | Spawn flameshot (screenshot) |
+
+> Gaps
+| Keys | Action |
+| --- | --- |
+| Super + Minus | Reduce gaps |
+| Super + Equal | Increase gaps |
+| Super + Shift + Equal | Remove gaps |
+
+> Modes
+| Keys | Action |
+| --- | --- |
+| Super + z | Set tiling mode []= |
+| Super + f | Set floating mode ><> |
+| Super + m | Set monocle mode [M] |
+
+> Bar
+| Keys | Action |
+| --- | --- |
+| Super + Shift + t | Toggle Bar |
+
+> Bluetooth
+| Keys | Action |
+| --- | --- |
 | Super + Shift + r | Connect bluetooth device (runs utilities.sh) |
 | Super + Shift + d | Check bluetooth device battery (runs utilities.sh) |
-| Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
-| Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
-| Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
-| Super + Shift + n | Display neofetch in a floating st window (runs utilities.sh) |
+
+> Fn keys
 | Audio keys | Increase/decrease/mute volume (runs utilities.sh) |
 | Brightness keys | Increase/decrease brightness (runs utilities.sh) |
 
