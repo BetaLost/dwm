@@ -477,8 +477,8 @@ buttonpress(XEvent *e)
 					*s = '^';
 					if (*(++s) == 'f')
 						x += atoi(++s);
-					// else if (*(++s) == 'l' || *(++s) == 'e')
-					// 	x += (bh - vertpadbar) / 2;
+					else if (*s == 'l' || *s == 'e')
+						x += (bh - vertpadbar) / 2;
 					while (*(s++) != '^');
 					text = s;
 					s--;
