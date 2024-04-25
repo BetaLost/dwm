@@ -33,6 +33,7 @@
 | Super + Left Arrow | Focus previous window |
 | Super + Space | Toggle floating mode for current window |
 | Super + c | Center focused window (if floating) |
+| Super + e | Display emojis menu (runs utilities.sh) |
 | Super + Shift + n | Run neofetch in a floating st window (runs utilities.sh) |
 | Super + Shift + c | Display clock in a floating st window (runs utilities.sh) |
 | Super + Shift + f | Display weather information in a floating st window (runs utilities.sh) |
