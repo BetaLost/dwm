@@ -799,7 +799,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 
 			text[i] = '\0';
 			w = TEXTW(text) - lrpad;
-			drw_text(drw, x - 2 * sp, borderpx + vertpadbar / 2, w, bh - vertpadbar, 0, text, 0);
+			drw_text(drw, x - 2 * sp, vertpadbar / 2, w, bh - vertpadbar, 0, text, 0);
 			
 			x += w;
 
@@ -829,7 +829,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 					while (text[++i] != ',');
 					int rh = atoi(text + ++i);
 					
-					drw_rect(drw, rx + x - 2 * sp, ry + borderpx + vertpadbar / 2, rw, rh, 1, 0);
+					drw_rect(drw, rx + x - 2 * sp, ry + vertpadbar / 2, rw, rh, 1, 0);
 				} else if (text[i] == 'f') {
 					x += atoi(text + ++i);
 				} else if (text[i] == 'l') {
@@ -850,7 +850,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 	if (!isCode) {
 		w = TEXTW(text) - lrpad;
 		//drw_text(drw, x, 0, w, bh, 0, text, 0);
-		drw_text(drw, x - 2 * sp, borderpx + vertpadbar / 2, w, bh - vertpadbar, 0, text, 0);
+		drw_text(drw, x - 2 * sp, vertpadbar / 2, w, bh - vertpadbar, 0, text, 0);
 	}
 
 	drw_setscheme(drw, scheme[SchemeNorm]);
@@ -892,7 +892,7 @@ drawbar(Monitor *m)
 		// 4 different schemes possible. To set scheme for selected but not occupied change the first SchemeIdle
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? (occ & 1 << i ? SchemeSel : SchemeIdle) : (occ & 1 << i ? SchemeNorm : SchemeIdle)]);
 		
-		drw_text(drw, x, 0, w, bh_n, lrpad / 2, tags[i], urg & 1 << i);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 		if (ulineall || m->tagset[m->seltags] & 1 << i)
 			drw_rect(drw, x + ulinepad, bh_n - ulinestroke - ulinevoffset, w - (ulinepad * 2), ulinestroke, 1, 0);
 			
@@ -901,9 +901,9 @@ drawbar(Monitor *m)
 	
 	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
-	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+	x = drw_text(drw, x, 0, w, bh_n, lrpad / 2, m->ltsymbol, 0);
 	
-	if ((w = m->ww - tw - x - 2 * sp) > bh_n) {
+	if ((w = m->ww - tw - x - 2 * sp) > bh) {
 		if (n > 0) {
 			tw = TEXTW(m->sel->name) + lrpad;
 			mw = (tw >= w || n == 1) ? 0 : (w - tw) / (n - 1);
@@ -935,11 +935,11 @@ drawbar(Monitor *m)
 				
 				drw_setscheme(drw, scheme[m->sel == c ? SchemeSel : SchemeNorm]);
 				if (tw > 0) /* trap special handling of 0 in drw_text */
-					drw_text(drw, x, 0, tw, bh, lrpad / 2, title, 0);
+					drw_text(drw, x, 0, tw, bh_n, lrpad / 2, title, 0);
 				if (c->isfloating)
 					drw_rect(drw, x + boxs, boxs, boxw, boxw, c->isfixed, 0);
 				if (m->sel == c)
-					drw_rect(drw, x + ulinepad, bh - ulinestroke - ulinevoffset, tw - (ulinepad * 2), ulinestroke, 1, 0);
+					drw_rect(drw, x + ulinepad, bh_n - ulinestroke - ulinevoffset, tw - (ulinepad * 2), ulinestroke, 1, 0);
 				x += tw;
 				w -= tw;
 			}
@@ -947,7 +947,7 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, x, 0, w, bh_n, 1, 1);
 	}
-	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
+	drw_map(drw, m->barwin, 0, 0, m->ww, bh_n);
 }
 
 void
@@ -1966,7 +1966,7 @@ togglebar(const Arg *arg)
 {
 	selmon->showbar = !selmon->showbar;
 	updatebarpos(selmon);
-	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx + sp, selmon->by + vp, selmon->ww - 2 * sp, bh);
+	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx + sp, selmon->by + vp, selmon->ww - 2 * sp, bh - borderpx * 2);
 	arrange(selmon);
 }
 
@@ -2077,7 +2077,7 @@ updatebars(void)
 	for (m = mons; m; m = m->next) {
 		if (m->barwin)
 			continue;
-		m->barwin = XCreateWindow(dpy, root, m->wx + sp, m->by + vp, m->ww - 2 * sp, bh, 0, DefaultDepth(dpy, screen),
+		m->barwin = XCreateWindow(dpy, root, m->wx + sp, m->by + vp, m->ww - 2 * sp, bh - borderpx * 2, 0, DefaultDepth(dpy, screen),
 				CopyFromParent, DefaultVisual(dpy, screen),
 				CWOverrideRedirect|CWBackPixmap|CWEventMask, &wa);
 		XDefineCursor(dpy, m->barwin, cursor[CurNormal]->cursor);
