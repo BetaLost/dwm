@@ -77,6 +77,8 @@ static const char *light_down[] = { "/home/chief/.config/utilities.sh", "--downl
 static const char *connectbluecmd[] = { "/home/chief/.config/utilities.sh", "--connectblue", NULL };
 static const char *bluebatcmd[] = { "/home/chief/.config/utilities.sh", "--checkbat", NULL };
 
+static const char *emojiscmd[] = { "/home/chief/.config/utilities.sh", "--emojis", NULL };
+
 static const char *weathercmd[] = { "/home/chief/.config/utilities.sh", "--weather", NULL };
 static const char *clockcmd[] = { "/home/chief/.config/utilities.sh", "--clock", NULL };
 static const char *neofetchcmd[] = { "/home/chief/.config/utilities.sh", "--neofetch", NULL };
@@ -106,6 +108,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenucmd } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = connectbluecmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = bluebatcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = emojiscmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = weathercmd } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clockcmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neofetchcmd } },
