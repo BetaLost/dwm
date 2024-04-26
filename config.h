@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-i", "-c", "-l", "10", "-m", dmenumon, "-fn", dmenufont, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-c", "-l", "10", "-p", "App Launcher", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *powermenucmd[] = { "pkill", "-SIGRTMIN+16", "-f", "dwmbar.sh", NULL };
 
 static const char *termcmd[] = { "st", NULL };
