@@ -111,10 +111,11 @@
 | --- | --- |
 | Volume | Toggle mute |
 | Brightness | None |
-| CPU | Hide CPU temperature (default: show CPU temperature) |
-| RAM | Always show usage in MiB (default: if usage > 1024, show in GiB) |
-| Network | Always display network SSID name (default: display network SSID name if there is no data transmission) |
-| Prayer | Display time remaining to next prayer (default: display only current prayer name) |
-| Time | Toggle between 12-hour and 24-hour time (default: display 24-hour time) |
-| Date | Toggle between Gregorian and Hijri calendars (default: display Gregorian date) |
+| CPU | Hide CPU temperature *(default: show CPU temperature)* |
+| RAM | Always show usage in MiB *(default: if usage > 1024, show in GiB)* |
+| Network | Always display network SSID name *(default: display network SSID name if there is no data transmission)* |
+| Battery | Display power draw (W) and time remaining on battery *(default: display battery percentage)* |
+| Prayer | Display time remaining to next prayer *(default: display only current prayer name)* |
+| Time | Toggle between 12-hour and 24-hour time *(default: display 24-hour time)* |
+| Date | Toggle between Gregorian and Hijri calendars *(default: display Gregorian calendar date)* |
 | Power | Display power menu |
