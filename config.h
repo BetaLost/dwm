@@ -67,21 +67,23 @@ static const char *browsercmd[] = { "brave", "--password-store=basic", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *kdeconnectcmd[] = { "kdeconnect-app", NULL };
 
-static const char *upvol[] = { "/home/chief/.config/utilities.sh", "--upvol", NULL };
-static const char *downvol[] = { "/home/chief/.config/utilities.sh", "--downvol", NULL };
-static const char *mutevol[] = { "/home/chief/.config/utilities.sh", "--mutevol", NULL };
+#define UTILS "/home/chief/.config/scripts/utilities.sh"
+static const char *upvol[] = { UTILS, "--upvol", NULL };
+static const char *downvol[] = { UTILS, "--downvol", NULL };
+static const char *mutevol[] = { UTILS, "--mutevol", NULL };
 
-static const char *light_up[] = { "/home/chief/.config/utilities.sh", "--uplight", NULL };
-static const char *light_down[] = { "/home/chief/.config/utilities.sh", "--downlight", NULL };
+static const char *light_up[] = { UTILS, "--uplight", NULL };
+static const char *light_down[] = { UTILS, "--downlight", NULL };
 
-static const char *connectbluecmd[] = { "/home/chief/.config/utilities.sh", "--connectblue", NULL };
-static const char *bluebatcmd[] = { "/home/chief/.config/utilities.sh", "--checkbat", NULL };
+static const char *connectbluecmd[] = { UTILS, "--connectblue", NULL };
+static const char *bluebatcmd[] = { UTILS, "--checkbat", NULL };
 
-static const char *emojiscmd[] = { "/home/chief/.config/utilities.sh", "--emojis", NULL };
+static const char *emojiscmd[] = { UTILS, "--emojis", NULL };
+static const char *clipboardcmd[] = { UTILS, "--clipboard", NULL };
 
-static const char *weathercmd[] = { "/home/chief/.config/utilities.sh", "--weather", NULL };
-static const char *clockcmd[] = { "/home/chief/.config/utilities.sh", "--clock", NULL };
-static const char *neofetchcmd[] = { "/home/chief/.config/utilities.sh", "--neofetch", NULL };
+static const char *weathercmd[] = { UTILS, "--weather", NULL };
+static const char *clockcmd[] = { UTILS, "--clock", NULL };
+static const char *neofetchcmd[] = { UTILS, "--neofetch", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -109,6 +111,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = connectbluecmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = bluebatcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = emojiscmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = clipboardcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = weathercmd } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clockcmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neofetchcmd } },
